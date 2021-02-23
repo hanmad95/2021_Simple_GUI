@@ -1,4 +1,5 @@
 from tkinter.filedialog import askopenfilename
+from ttkthemes import ThemedTk
 from tkinter import ttk
 import tkinter as tk
 import pandas as pd
@@ -17,29 +18,28 @@ class PreProcessing:
         self.setting = settings
         self.master = master
         self.master.title("Visualization")
-        self.can = tk.Canvas(self.master, width=600, height=400)
-        self.can.pack()
-        self.label1=tk.Label(self.master, text="Please load an SLR:")
+        
+        self.label1=ttk.Label(self.master, text="Please load an SLR:")
         self.label1.place(relx=0.2,rely=0.1)
-        self.loadbutton = tk.Button(self.master, text="Load SLR", bg="gray",command=self.loadslr)
-        self.loadbutton.place(relx=0.5, rely=0.1)
-        self.label2=tk.Label(self.master, text="Please load Zoning:")
-        self.label2.place(relx=0.2,rely=0.2)
-        self.loadbuttonzones = tk.Button(self.master, text="Load Zoning", bg="gray",command=self.loadzones)
-        self.loadbuttonzones.place(relx=0.5, rely=0.2)
-        self.cleanbutton = tk.Button(self.master, text="Clean Report",bg="gray", command=self.cleanbutton)
-        self.cleanbutton.place(relx=0.2, rely=0.4)
-        self.cleanprogress = ttk.Progressbar(self.master, orient="horizontal", length=200, mode="determinate")
-        self.cleanprogress.place(relx=0.42, rely=0.4)
-        self.lanebutton = tk.Button(self.master, text="Add Lanes", bg="gray", command = self.add_lanes)
-        self.lanebutton.place(relx=0.2,rely=0.5)
-        self.laneprogress = ttk.Progressbar(self.master, orient="horizontal", length=200, mode="determinate")
-        self.laneprogress.place(relx=0.42, rely=0.5)
-        self.bundlingbutton = tk.Button(self.master, text="Bundling", bg="gray", command = self.bundling)
-        self.bundlingbutton.place(relx=0.2,rely=0.6)
-        self.bundlingprogress = ttk.Progressbar(self.master, orient="horizontal", length=200, mode="determinate")
-        self.bundlingprogress.place(relx=0.42, rely=0.6)
-        self.exitbutton = tk.Button(self.master,text="Save & Close",bg="gray", command=self.close_and_save)
+        # self.loadbutton = tk.Button(self.master, text="Load SLR", bg="gray",command=self.loadslr)
+        # self.loadbutton.place(relx=0.5, rely=0.1)
+        # self.label2=tk.Label(self.master, text="Please load Zoning:")
+        # self.label2.place(relx=0.2,rely=0.2)
+        # self.loadbuttonzones = tk.Button(self.master, text="Load Zoning", bg="gray",command=self.loadzones)
+        # self.loadbuttonzones.place(relx=0.5, rely=0.2)
+        # self.cleanbutton = tk.Button(self.master, text="Clean Report",bg="gray", command=self.cleanbutton)
+        # self.cleanbutton.place(relx=0.2, rely=0.4)
+        # self.cleanprogress = ttk.Progressbar(self.master, orient="horizontal", length=200, mode="determinate")
+        # self.cleanprogress.place(relx=0.42, rely=0.4)
+        # self.lanebutton = tk.Button(self.master, text="Add Lanes", bg="gray", command = self.add_lanes)
+        # self.lanebutton.place(relx=0.2,rely=0.5)
+        # self.laneprogress = ttk.Progressbar(self.master, orient="horizontal", length=200, mode="determinate")
+        # self.laneprogress.place(relx=0.42, rely=0.5)
+        # self.bundlingbutton = tk.Button(self.master, text="Bundling", bg="gray", command = self.bundling)
+        # self.bundlingbutton.place(relx=0.2,rely=0.6)
+        # self.bundlingprogress = ttk.Progressbar(self.master, orient="horizontal", length=200, mode="determinate")
+        # self.bundlingprogress.place(relx=0.42, rely=0.6)
+        self.exitbutton = ttk.Button(self.master,text="Save & Close", command=self.close_and_save)
         self.exitbutton.place(relx=0.375, rely=0.85)
 
 
